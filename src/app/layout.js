@@ -1,7 +1,9 @@
+import { Theme } from '@radix-ui/themes';
 import { Inter } from 'next/font/google';
+
 import './globals.scss';
 import '@radix-ui/themes/styles.css';
-import { Theme } from '@radix-ui/themes';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {

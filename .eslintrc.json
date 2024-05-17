@@ -1,3 +1,77 @@
 {
-  "extends": ["next/babel", "next/core-web-vitals"]
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["react", "prettier", "simple-import-sort"],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "18.0"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "./"]
+      }
+    }
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:jest/recommended",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-eval": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(@|src)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(css|scss|sass)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "trailingComma": "es5",
+        "semi": true
+      }
+    ],
+
+    "jest/no-deprecated-functions": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off"
+  }
 }
