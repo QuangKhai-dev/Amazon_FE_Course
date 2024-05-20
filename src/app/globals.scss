@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  text-decoration: none;
+  color: #007185;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.category_title {
+  font-size: 21px;
+  color: #0f1111;
+  font-weight: 700;
+}
