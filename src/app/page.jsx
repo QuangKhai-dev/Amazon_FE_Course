@@ -7,6 +7,9 @@ export default function Home() {
       <a href="https://google.com" target="_blank" rel="noreferrer">
         Click me
       </a>
+      <button type="button" className="btn">
+        Đăng nhập
+      </button>
       <Flex direction="column" gap="2">
         <Text>Hello from Radix Themes :</Text>
         <Button>Let's go</Button>

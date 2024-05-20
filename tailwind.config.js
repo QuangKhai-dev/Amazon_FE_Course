@@ -18,6 +18,9 @@ module.exports = {
           orange: '#ffa41c',
         },
       },
+      fontSize: {
+        '13px': '13px',
+      },
     },
   },
   plugins: [],
