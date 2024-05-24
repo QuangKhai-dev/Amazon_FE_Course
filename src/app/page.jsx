@@ -14,6 +14,14 @@ export default function Home() {
         <Text>Hello from Radix Themes :</Text>
         <Button>Let's go</Button>
       </Flex>
+
+      <div className="container_demo">
+        <h3 className="demo_title_mini">Hello Nextjs</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          ratione!
+        </p>
+      </div>
     </main>
   );
 }

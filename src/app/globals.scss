@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply bg-black text-white py-2 px-5 hover:bg-red-500 duration-300;
-    font-size: 13px;
-  }
-}
+// @layer components {
+//   .btn {
+//     @apply bg-black text-white py-2 px-5 hover:bg-red-500 duration-300;
+//     font-size: 13px;
+//   }
+// }
 
 a {
   text-decoration: none;
@@ -20,4 +20,45 @@ a {
   font-size: 21px;
   color: #0f1111;
   font-weight: 700;
+}
+
+// nested route 
+.container_demo {
+  .demo_title_mini {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    transition: all 0.5s;
+
+    // parent selector 
+    &:hover {
+      background-color: #007185;
+    }
+  }
+
+
+  p {
+    color: black;
+    background-color: #007185;
+    padding: 10px;
+  }
+}
+
+// background-color, border,padding,color
+@mixin styleButton ($bg-color, $border, $p, $color) {
+  background-color: $bg-color;
+  border: $border;
+  padding: $p;
+  color: $color;
+  border-radius: 12px;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $bg-color;
+    background-color: $color;
+  }
+}
+
+.btn {
+  @include styleButton(black, 3px solid red, 8px 20px, white)
 }
